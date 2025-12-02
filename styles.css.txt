@@ -1,0 +1,18 @@
+:root{--bg:#0f1724;--card:#0b1220;--accent:#6ee7b7;--muted:#9aa4b2}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#071028 0%, #071a2b 100%);color:#e6eef6}
+.container{max-width:1000px;margin:0 auto;padding:20px}
+.site-header{background:rgba(255,255,255,0.03);backdrop-filter: blur(6px)}
+.site-header .container{display:flex;align-items:center;justify-content:space-between}
+.site-header h1{margin:12px 0;font-size:22px}
+nav a{color:var(--muted);margin-left:14px;text-decoration:none}
+.hero{padding:48px 0;text-align:center}
+.hero h2{font-size:34px;margin:0 0 8px}
+.hero p{color:var(--muted)}
+.btn{display:inline-block;margin-top:18px;padding:10px 16px;border-radius:10px;background:var(--accent);color:#042022;text-decoration:none;font-weight:600}
+.games-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:26px}
+.card{background:rgba(255,255,255,0.03);padding:16px;border-radius:10px}
+.small-btn{display:inline-block;margin-top:10px;padding:7px 10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-decoration:none}
+.about{margin-top:24px;color:var(--muted)}
+.site-footer{padding:14px 0;text-align:center;color:var(--muted);margin-top:40px}
+@media (max-width:520px){.hero h2{font-size:26px}}
