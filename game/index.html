@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cloud Game - Reaction Battle</title>
+    <title>Number Guessing Game</title>
 </head>
-<body style="background:black;color:lime;text-align:center;font-family:sans-serif;">
 
-<h1>🎯 Reaction Battle</h1>
-<p>Click the number as fast as you can!</p>
+<body style="background:#111;color:#00ff88;font-family:sans-serif;text-align:center;">
 
-<h2 id="num">0</h2>
-<button onclick="hit()">HIT</button>
+<h1>🔢 Number Guessing Game</h1>
 
-<p id="score">Score: 0</p>
+<p>
+I have chosen a number between <b>1 and 10</b>.<br>
+Try to guess it!
+</p>
+
+<input id="guess" type="number" min="1" max="10">
+<br><br>
+
+<button onclick="check()">GUESS</button>
+
+<h2 id="result"></h2>
 
 <script>
-let score = 0;
+let secret = Math.floor(Math.random() * 10) + 1;
 
-function hit() {
-    score++;
-    document.getElementById("score").innerHTML = "Score: " + score;
-    document.getElementById("num").innerHTML =
-        Math.floor(Math.random() * 9) + 1;
-}
-</script>
+function check(){
+    let g = document.getElementById("guess").value;
 
-</body>
-</html>
+    if(g == secret){
+        document.getElementById("result").innerHTML =
+            "✅ Correct! You guessed the numbe
 
+        
