@@ -1,54 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Gaming Portal - Game Theory Assignment</title>
-  <link rel="stylesheet" href="styles.css">
+    <title>Cloud Game - Reaction Battle</title>
 </head>
-<body>
+<body style="background:black;color:lime;text-align:center;font-family:sans-serif;">
 
-<header>
-  <h1>🎮 Gaming Portal</h1>
-  <p>Game Theory Subject Assignment</p>
-</header>
+<h1>🎯 Reaction Battle</h1>
+<p>Click the number as fast as you can!</p>
 
-<main>
+<h2 id="num">0</h2>
+<button onclick="hit()">HIT</button>
 
-<section>
-  <h2>Student Details</h2>
-  <p><b>Name:</b> Ayush Dubey</p>
-  <p><b>Registration No:</b> 23BCG10095</p>
-  <p><b>Subject:</b> Game Theory</p>
-</section>
+<p id="score">Score: 0</p>
 
-<section>
-  <h2>About This Website</h2>
-  <p>
-    This gaming portal is created as part of my Game Theory assignment.
-    The aim of this project is to demonstrate:
-  </p>
+<script>
+let score = 0;
 
-  <ul>
-    <li>Creating and hosting a website on GitHub</li>
-    <li>Sharing GitHub repository with multiple users</li>
-    <li>Developing and deploying a simple online game using cloud services</li>
-  </ul>
-</section>
-
-<section>
-  <h2>🎲 Play the Game</h2>
-  <p>
-    Click the button below to play my cloud-hosted game:
-  </p>
-
-  <a href="game/index.html" class="play-btn">▶ Play Game</a>
-</section>
-
-</main>
-
-<footer>
-  <p>© 2025 Ayush Dubey | Game Theory Assignment</p>
-</footer>
+function hit() {
+    score++;
+    document.getElementById("score").innerHTML = "Score: " + score;
+    document.getElementById("num").innerHTML =
+        Math.floor(Math.random() * 9) + 1;
+}
+</script>
 
 </body>
 </html>
+
