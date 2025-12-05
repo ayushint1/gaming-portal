@@ -15,7 +15,7 @@ The aim of this assignment is to:
 
 Access the gaming portal here:
 
-https://yourusername.github.io/gaming-portal/
+https://ayushint1.github.io/gaming-portal/
 
 ---
 
@@ -23,7 +23,7 @@ https://yourusername.github.io/gaming-portal/
 
 Play the Space Dodger game here:
 
-https://yourusername.github.io/gaming-portal/game/
+https://ayushint1.github.io/gaming-portal/game/
 
 ---
 
@@ -31,7 +31,7 @@ https://yourusername.github.io/gaming-portal/game/
 
 Project source code:
 
-https://github.com/yourusername/gaming-portal
+https://github.com/ayushint1/gaming-portal
 
 ---
 
@@ -49,7 +49,7 @@ https://github.com/yourusername/gaming-portal
 - HTML  
 - CSS  
 - JavaScript  
-- GitHub (Repository hosting)
+- GitHub (Repository hosting)  
 - GitHub Pages (Cloud deployment)
 
 ---
@@ -57,12 +57,11 @@ https://github.com/yourusername/gaming-portal
 ## 🔹 Objective
 
 To learn and demonstrate:
-- Basic web development skills
-- GitHub repository creation and sharing
-- Website hosting using a cloud service
-- Public deployment of games
+- Basic web development skills  
+- GitHub repository creation and sharing  
+- Website hosting using a cloud service  
+- Public deployment of games  
 - Linking gaming projects inside a hosted portal
 
----
 
 ✅ This project fulfills all objectives given in the assignment.
