@@ -1,33 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Number Guessing Game</title>
+    <title>Simple Runner Game</title>
+    <style>
+        body {
+            background-color: #111;
+            color: #00ff88;
+            font-family: sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        #game {
+            position: relative;
+            width: 600px;
+            height: 200px;
+            margin: 50px auto;
+            background-color: #222;
+            border: 2px solid #00ff88;
+        }
+        #player {
+            width: 40px;
+            height: 40px;
+            background-color: #00ff88;
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+        }
+        .obstacle {
+            width: 30px;
+            height: 40px;
+            background-color: red;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        #score {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
+<body>
 
-<body style="background:#111;color:#00ff88;font-family:sans-serif;text-align:center;">
-
-<h1>🔢 Number Guessing Game</h1>
-
-<p>
-I have chosen a number between <b>1 and 10</b>.<br>
-Try to guess it!
-</p>
-
-<input id="guess" type="number" min="1" max="10">
-<br><br>
-
-<button onclick="check()">GUESS</button>
-
-<h2 id="result"></h2>
+<h1>🏃 Runner Game</h1>
+<div id="game">
+    <div id="player"></div>
+</div>
+<p id="score">Score: 0</p>
 
 <script>
-let secret = Math.floor(Math.random() * 10) + 1;
+let player = document.getElementById("player");
+let game = document.getElementById("game");
+let scoreDisplay = document.getElementById("score");
 
-function check(){
-    let g = document.getElementById("guess").value;
+let jumping = false;
+let score = 0;
 
-    if(g == secret){
-        document.getElementById("result").innerHTML =
-            "✅ Correct! You guessed the numbe
+// Jump function
+function jump() {
+    if(jumping) return;
+    jumping = true;
+    let jumpHeight = 0;
+    let up = setInterval(() => {
+        if(jumpHeight >= 100) {
+            clearInterval(up);
+            let down = setInterval(() => {
+                if(jumpHeight <= 0) {
+                    clearInterval(down);
+                    jumping = false;
+                }
+                jumpHeight -= 5;
+                player.style.bottom = jumpHeight + 'px';
+            }, 20);
+        }
+        jumpHeight += 5;
+        player.style.bottom = jumpHeight + 'px';
+    }, 20);
+}
 
-        
+// Listen for spacebar to jump
+document.addEventListener("keydown", (e) => {
+    if(e.code === "Space") {
+        jump();
+    }
+});
+
+// Create obstacles
+function createObstacle() {
+    let obstacle = document.createElement("div");
+    obstacle.classList.add("obstacle");
+    game.appendChild(obstacle);
+    let obstaclePos = 600; // right edge
+    let move = setInterval(() => {
+        obstaclePos -= 5;
+        obstacle.style.right = obstaclePos + 'px';
+
+        // Collision detection
+        let playerBottom = parseInt(player.style.bottom) || 0;
+        if(obstaclePos < 100 && obstaclePos > 50 && playerBottom < 40) {
+            clearInterval(move);
+            alert("💥 Game Over! Your score: " + score);
+            location.reload();
+        }
+
+        // Remove obstacle when out of screen
+        if(obstaclePos < -30) {
+            clearInterval(move);
+            obstacle.remove();
+            score++;
+            scoreDisplay.innerHTML = "Score: " + score;
+        }
+    }, 20);
+
+    // Create new obstacle randomly
+    setTimeout(createObstacle, Math.random() * 3000 + 1000);
+}
+
+// Start the game
+createObstacle();
+</script>
+
+</body>
+</html>
+
