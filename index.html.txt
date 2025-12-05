@@ -3,26 +3,56 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Space Dodger — ArcadeHub</title>
-<style>
-html,body{height:100%;margin:0;background:#020617;color:#fff;font-family:Arial,Helvetica,sans-serif}
-.wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%}
-canvas{border:2px solid rgba(255,255,255,0.06);background:linear-gradient(#00101a,#000);width:100%;max-width:600px;height:420px}
-.hud{margin-top:10px;display:flex;gap:12px;align-items:center}
-button{padding:8px 12px;border-radius:8px;border:none;background:#69b3ff;color:#012;cursor:pointer}
-</style>
+<title>ArcadeHub — Gaming Portal</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
-<canvas id="gameCanvas" width="600" height="420" aria-label="Space Dodger game canvas"></canvas>
-<div class="hud">
-<div>Score: <span id="score">0</span></div>
-<button id="restartBtn">Restart</button>
-<div style="font-size:13px;color:#99a">Use ◀ ▶ or A D to move</div>
+<header class="site-header">
+<div class="container">
+<h1>ArcadeHub</h1>
+<nav>
+<a href="#">Home</a>
+<a href="#games">Games</a>
+<a href="#about">About</a>
+</nav>
 </div>
-</div>
+</header>
 
 
-<script src="main.js"></script>
+<main class="container">
+<section class="hero">
+<h2>Play fast, score hard.</h2>
+<p>Welcome to ArcadeHub — a tiny portal for browser games. Click the button below to play our demo game.</p>
+<a class="btn" href="game/index.html" target="_blank" rel="noopener">Play Space Dodger (Guest)</a>
+</section>
+
+
+<section id="games" class="games-grid">
+<article class="card">
+<h3>Space Dodger</h3>
+<p>Dodge falling asteroids and survive as long as you can. Mobile and desktop friendly.</p>
+<a class="small-btn" href="game/index.html" target="_blank" rel="noopener">Play</a>
+</article>
+
+
+<!-- Add more game cards here -->
+</section>
+
+
+<section id="about" class="about">
+<h3>About this portal</h3>
+<p>This is a student project demo showing how to host a static homepage on GitHub Pages and deploy games to a cloud host.</p>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<div class="container">© <span id="year"></span> ArcadeHub — Demo</div>
+</footer>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
