@@ -15,4 +15,5 @@ nav a{color:var(--muted);margin-left:14px;text-decoration:none}
 .small-btn{display:inline-block;margin-top:10px;padding:7px 10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);text-decoration:none}
 .about{margin-top:24px;color:var(--muted)}
 .site-footer{padding:14px 0;text-align:center;color:var(--muted);margin-top:40px}
+
 @media (max-width:520px){.hero h2{font-size:26px}}
